@@ -1,0 +1,8 @@
+<h1>Welcome To My Friends List!!</h1>
+<% @people.each do |person| %>
+  <h3><%= person.name %></h3>
+  <%= link_to 'Show Person', person_path(person) %>
+  <p><%= link_to 'New Person', new_person_path %></p>
+  <%= link_to 'Edit Person', edit_person_path([person]) %>
+  <p><%= button_to 'Delete Person', person_path(person.id), method: :delete %></p>
+<% end %>
